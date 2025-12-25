@@ -1,49 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alexander Elias — Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
 
-    <!-- Updated title and description -->
-    <title>Alexander Elias - Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio of Greyston Bellino - Web Developer and Data Scientist. Discover projects, experiences, and skills in React, Python, AI, and more."
-    />
+<header class="topbar">
+  <div class="container inner">
+    <a class="brand" href="index.html">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <div class="name">Alexander Elias</div>
+        <span class="role">Strategy • Marketing • Build</span>
+      </div>
+    </a>
 
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="%PUBLIC_URL%" />
-    <meta property="og:title" content="Greyston Bellino - Portfolio" />
-    <meta property="og:description" content="Explore the professional portfolio of Greyston Bellino, showcasing skills in web development, data science, and machine learning." />
-    <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
+    <nav class="nav" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="experience.html">Experience</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="%PUBLIC_URL%" />
-    <meta name="twitter:title" content="Greyston Bellino - Portfolio" />
-    <meta name="twitter:description" content="Web Developer and Data Scientist Portfolio - Projects, experiences, and more by Greyston Bellino." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/logo.png" />
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="fade-up">
+        <div class="kicker"><span class="dot"></span>Available for collaborations & roles</div>
+        <h1 class="h1">I build brands that look expensive and perform.</h1>
+        <p class="sub">
+          Portfolio of work across marketing, web, content systems, and brand execution.
+          Minimal. Sharp. Outcome-driven.
+        </p>
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+        <div class="hero-actions">
+          <a class="btn primary" href="projects.html">View Projects</a>
+          <a class="btn" href="experience.html">See Experience</a>
+          <a class="btn ghost" href="contact.html">Contact</a>
+        </div>
+      </div>
 
-    <!-- Manifest for Web App -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+      <div class="card fade-up">
+        <div class="pad">
+          <div class="title">Focus</div>
+          <div class="big">Creative systems + measurable growth</div>
+          <div class="meta">
+            <div class="pill">Brand + Offer</div>
+            <div class="pill">Web / Landing Pages</div>
+            <div class="pill">Content Strategy</div>
+            <div class="pill">Analytics & CRO</div>
+          </div>
+          <hr />
+          <div class="title">Now</div>
+          <div style="color:var(--muted); line-height:1.55; font-size:13px">
+            Building <span style="color:var(--text)">Parfums de Elias</span> and scaling a content + account management firm.
+            Always open to projects where design taste meets conversion discipline.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- External CSS Link -->
-    <link rel="stylesheet" href="%PUBLIC_URL%/css/styles.css" />
+  <section class="section">
+    <div class="container">
+      <h2 class="fade-up">Highlights</h2>
+      <div class="grid-3">
+        <div class="item fade-up">
+          <div class="h">
+            <strong>Personal Brand Site</strong>
+            <span class="tag">Web</span>
+          </div>
+          <p>High-trust design, fast performance, clean narrative.</p>
+        </div>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+        <div class="item fade-up">
+          <div class="h">
+            <strong>Fragrance House</strong>
+            <span class="tag">Brand</span>
+          </div>
+          <p>Packaging, positioning, product storytelling, and launch planning.</p>
+        </div>
 
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+        <div class="item fade-up">
+          <div class="h">
+            <strong>Content Systems</strong>
+            <span class="tag">Growth</span>
+          </div>
+          <p>Repeatable production workflows for creators & local businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container row">
+    <div>© <span id="y"></span> Alexander Elias</div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap">
+      <a href="contact.html" class="pill">Email</a>
+      <a href="projects.html" class="pill">Projects</a>
+      <a href="experience.html" class="pill">Experience</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
 </html>
