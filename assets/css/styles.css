@@ -1,82 +1,137 @@
+/* =========================
+   AlexanderElias.ca — main styles
+   Clean rewrite (cream + charcoal + tasteful red)
+   ========================= */
+
+/* ---------- Tokens ---------- */
 :root{
   --cream:#F7F5F2;
   --cream-2:#FAFAF7;
+
   --charcoal:#1F1F1F;
   --charcoal-2:#2A2A2A;
-  --red:#B33A3A;              /* hover red */
-  --stroke:#ffffff1a;
+
+  --accent:#B33A3A;         /* tasteful red hover */
+  --line: rgba(0,0,0,0.08);
+
+  --glass: rgba(247,245,242,0.92);
+  --glass-border: rgba(255,255,255,0.12);
+  --glass-fill: rgba(255,255,255,0.06);
+
+  --radius: 18px;
+
+  --max: 1120px;
+
+  /* Layout */
+  --header-h: 78px;
+  --page-pad-y: 28px;
+  --page-pad-x: 18px;
 }
 
-/* HEADER */
+/* ---------- Base / Reset ---------- */
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+
+html, body{ height: 100%; }
+
+body{
+  margin: 0;
+  min-height: 100dvh;
+
+  color: var(--charcoal);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Background image (GitHub Pages friendly path) */
+  background-color: var(--cream);
+  background-image: url("assets/img/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Helps the page “fill the screen” (no extra scroll unless content actually needs it) */
+  display: flex;
+  flex-direction: column;
+}
+
+img{ max-width: 100%; height: auto; display: block; }
+
+a{ color: inherit; text-decoration: none; }
+a:focus-visible,
+button:focus-visible{
+  outline: 2px solid rgba(179,58,58,0.6);
+  outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
 .site-header{
   position: sticky;
   top: 0;
   z-index: 1000;
 
+  height: var(--header-h);
+
   background: transparent;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid var(--line);
 
   transition:
-    background .3s ease,
-    box-shadow .3s ease,
-    backdrop-filter .3s ease;
+    background .25s ease,
+    box-shadow .25s ease,
+    backdrop-filter .25s ease;
 }
 
 .site-header.scrolled{
-  background: rgba(247,245,242,0.92);
+  background: var(--glass);
   backdrop-filter: blur(10px);
-  box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
-
 .header-inner{
-  max-width: 1120px;
+  max-width: var(--max);
   margin: 0 auto;
-  padding: 14px 18px;
+  height: 100%;
+  padding: 0 var(--page-pad-x);
 
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* BRAND (left) */
+/* Brand */
 .brand{
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  text-decoration: none;
+  gap: 10px;
+  line-height: 1;
 }
 
 .brand img{
   height: 50px;
   width: auto;
-  display: block;
-  filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,.25));
 }
 
-/* NAV (center) */
+/* Nav */
 .nav{
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 36px;
+  gap: 34px;
 
   font-family: "Playfair Display", "Libre Baskerville", serif;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
-
 .nav a{
-  padding: 12px 8px;
+  position: relative; /* needed for underline */
+  padding: 10px 6px;
   font-weight: 500;
 }
 
-/* Hover + active states */
-.nav a:hover{
-  color: var(--red);
-}
+.nav a:hover{ color: var(--accent); }
 
 .nav a.active::after{
   content: "";
@@ -89,58 +144,43 @@
   opacity: .9;
 }
 
-.site-header.scrolled
-.nav{
-  gap: 36px;
-  font-size: 18px;
-  letter-spacing: 0.22em;
-}
-
-
-
-
-html, body{
-  min-height: 100%;
-}
-
-body{
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system;
-  color: var(--charcoal);
-
-  background-image: url("/assets/img/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-
-
-/* PAGE WRAPPER */
+/* ---------- Page wrapper ---------- */
 .page{
-  max-width: 1120px;
+  width: 100%;
+  max-width: var(--max);
   margin: 0 auto;
-  padding: 34px 18px 80px;
+  padding: var(--page-pad-y) var(--page-pad-x);
+
+  /* This is the key: page expands to fill remaining viewport height */
+  flex: 1;
+  display: flex;
 }
 
-/* HERO LAYOUT (like your example) */
+/* ---------- Hero (index) ---------- */
 .hero{
-  min-height: calc(100vh - 78px);
-  display:grid;
-  grid-template-columns: 1.2fr .9fr;
+  width: 100%;
+
+  /* Fill the screen (minus header + page padding) */
+  min-height: calc(100dvh - var(--header-h) - (var(--page-pad-y) * 2));
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
   gap: 36px;
   align-items: center;
+
+  /* On image backgrounds, hero copy is typically light */
+  color: var(--cream);
 }
 
-/* LEFT */
 .hero-title{
   margin: 0 0 16px;
   font-size: clamp(44px, 6vw, 86px);
-  line-height: .95;
+  line-height: 0.95;
   letter-spacing: -1px;
   font-weight: 800;
-  text-shadow: 0 10px 40px rgba(0,0,0,.55);
+  text-shadow: 0 10px 40px rgba(0,0,0,.45);
 }
+
 .hero-subtitle{
   margin: 0 0 22px;
   max-width: 52ch;
@@ -150,9 +190,9 @@ body{
 }
 
 .hero-cta{
-  display:flex;
+  display: flex;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   flex-wrap: wrap;
 }
 
@@ -163,75 +203,79 @@ body{
   line-height: 1.7;
   color: rgba(247,245,242,.78);
 }
+
 .hero-quote-author{
-  display:block;
+  display: block;
   margin-top: 6px;
   color: rgba(247,245,242,.62);
 }
 
-/* BUTTONS */
+/* ---------- Buttons ---------- */
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
+
   padding: 12px 16px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.12);
-  text-decoration:none;
+
+  border: 1px solid var(--glass-border);
+  background: var(--glass-fill);
+
   color: var(--cream);
-  background: rgba(255,255,255,0.06);
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  text-decoration: none;
+
+  transition:
+    transform .15s ease,
+    background .15s ease,
+    border-color .15s ease;
 }
+
 .btn:hover{
   transform: translateY(-1px);
   background: rgba(255,255,255,0.09);
   border-color: rgba(255,255,255,0.18);
 }
-.btn.primary{
-  background: rgba(255,255,255,0.12);
-}
-.btn.ghost{
-  background: transparent;
-}
+
+.btn.primary{ background: rgba(255,255,255,0.12); }
+.btn.ghost{ background: transparent; }
+
 .btn.small{
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
 }
-/* ICON BUTTON (LinkedIn) */
+
+/* Icon button (LinkedIn) */
 .btn.icon{
-  padding: 6px;
   width: 34px;
   height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  padding: 6px;
 }
 
 .btn.icon img{
   width: 14px;
   height: 14px;
-  display: block;
   object-fit: contain;
 }
 
-/* RIGHT CARD */
+/* ---------- Hero card ---------- */
 .hero-card{
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 18px;
-  overflow:hidden;
-  box-shadow: 0 30px 80px rgba(0,0,0,.55);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
 }
 
 .card-top{
   padding: 22px 22px 16px;
   border-bottom: 1px solid rgba(255,255,255,0.10);
-  text-align:center;
+  text-align: center;
 }
 
-  .avatar{
+.avatar{
   width: 86px;
   height: 86px;
   border-radius: 999px;
@@ -239,7 +283,7 @@ body{
 
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.05)),
-    url("../assets/img/avatar.png") center / cover no-repeat;
+    url("assets/img/avatar.png") center / cover no-repeat;
 
   border: 1px solid rgba(255,255,255,0.14);
 }
@@ -249,6 +293,7 @@ body{
   font-size: 22px;
   letter-spacing: .2px;
 }
+
 .card-role{
   margin-top: 6px;
   font-size: 14px;
@@ -256,80 +301,76 @@ body{
 }
 
 .card-actions{
-  display:flex;
+  display: flex;
   gap: 10px;
-  justify-content:center;
+  justify-content: center;
   padding: 14px 18px 6px;
   flex-wrap: wrap;
 }
 
-.card-section{
-  padding: 16px 22px 18px;
-}
+.card-section{ padding: 16px 22px 18px; }
+
 .card-section-title{
   font-size: 12px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: rgba(247,245,242,.68);
-  margin-bottom: 14px;
+  margin: 0 0 14px;
 }
 
-.meter{
-  margin-bottom: 14px;
-}
+.meter{ margin-bottom: 14px; }
+
 .meter-label{
   font-size: 14px;
   color: rgba(247,245,242,.85);
   margin-bottom: 8px;
 }
+
 .meter-bar{
   height: 10px;
   border-radius: 999px;
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(255,255,255,0.12);
-  overflow:hidden;
+  overflow: hidden;
 }
+
 .meter-bar span{
-  display:block;
+  display: block;
   height: 100%;
   width: 50%;
-  background: rgba(179,58,58,0.9); /* tasteful red accent */
+  background: rgba(179,58,58,0.9);
   border-radius: 999px;
 }
 
 .card-bottom{
   padding: 16px 22px;
   border-top: 1px solid rgba(255,255,255,0.10);
-  text-align:center;
-}
-.card-link{
-  color: rgba(247,245,242,.86);
-  text-decoration:none;
-}
-.card-link:hover{
-  color: var(--red);
+  text-align: center;
 }
 
-/* RESPONSIVE */
+.card-link{ color: rgba(247,245,242,.86); }
+.card-link:hover{ color: var(--accent); }
+
+/* ---------- Footer (optional) ---------- */
+.site-footer{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px var(--page-pad-x) 26px;
+  color: rgba(31,31,31,0.6);
+  font-size: 14px;
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 900px){
+  .nav{ gap: 18px; font-size: 13px; }
   .hero{
     grid-template-columns: 1fr;
     gap: 22px;
-    padding-top: 10px;
   }
-  .hero-card{
-    max-width: 520px;
-  }
+  .hero-card{ max-width: 520px; }
 }
 
-.site-footer{
-  margin-top: 100px;
-  padding: 0;
-  background: transparent;
-  border: none;
+@media (max-width: 520px){
+  .nav{ letter-spacing: 0.16em; }
+  .hero-title{ font-size: clamp(38px, 10vw, 58px); }
 }
-
-.site-footer *{
-  display: none;
-}
-
