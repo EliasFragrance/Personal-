@@ -1,113 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alexander Elias</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/Favicon.png" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="home">
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="assets/AE_zoomed.png" alt="AE monogram" />
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <!-- HERO -->
-  <main class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-
-    <div class="hero-inner">
-      <!-- LEFT: headline + supporting copy -->
-      <section class="hero-left">
-        <div class="hero-kicker">
-          <span class="kicker-dot"></span>
-          <span>Business • Strategy • Growth</span>
-        </div>
-
+  <main class="page">
+    <section class="hero">
+      <!-- LEFT SIDE -->
+      <div class="hero-left">
         <h1 class="hero-title">
-          Build with <span class="accent">clarity</span>.<br />
-          Win with <span class="accent">strategy</span>.
+          Business.<br />
+          Strategy.<br />
+          Growth.
         </h1>
 
-        <p class="hero-sub">
-          I help brands and teams turn ambiguous problems into focused plans —
-          positioning, go-to-market, and performance.
+        <p class="hero-subtitle">
+          I build data-driven go-to-market strategies, brand positioning, and growth systems
+          that turn ideas into outcomes.
         </p>
 
-        <blockquote class="hero-quote">
-          <p>“Simplicity is the ultimate sophistication.”</p>
-          <cite>— Leonardo da Vinci</cite>
-        </blockquote>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="projects.html">View Projects</a>
-          <a class="btn ghost" href="contact.html">Contact</a>
+        <div class="hero-cta">
+          <a class="btn primary" href="experience.html">View Experience</a>
+          <a class="btn ghost" href="projects.html">See Projects</a>
         </div>
-      </section>
 
-      <!-- RIGHT: profile card -->
-      <aside class="hero-card" aria-label="Profile summary">
+        <p class="hero-quote">
+          “Simplicity is the ultimate sophistication.”
+          <span class="hero-quote-author">— Leonardo da Vinci</span>
+        </p>
+      </div>
+
+      <!-- RIGHT SIDE CARD -->
+      <aside class="hero-card" aria-label="Profile card">
         <div class="card-top">
-          <div class="avatar" aria-hidden="true">
-            <!-- Option A: your monogram image -->
-            <img src="assets/AE_mark.png" alt="" />
-          </div>
-
-          <div class="card-id">
-            <div class="name-row">
-              <h2 class="card-name">Alexander Elias</h2>
-              <a class="card-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"
-                aria-label="LinkedIn">
-                in
-              </a>
-            </div>
-            <p class="card-role">Business Strategy • Brand Growth</p>
-          </div>
+          <div class="avatar" aria-hidden="true"></div>
+          <div class="card-name">Alexander Elias</div>
+          <div class="card-role">Business & Strategy</div>
         </div>
 
-        <div class="card-divider"></div>
-
-        <div class="card-section">
-          <p class="card-label">Focus Areas</p>
-          <ul class="tags">
-            <li>Go-to-market</li>
-            <li>Positioning</li>
-            <li>Growth Strategy</li>
-            <li>Analytics</li>
-          </ul>
+        <div class="card-actions">
+          <a class="btn small" href="resume.html">Download Resume</a>
+          <a class="btn small ghost" href="contact.html">Contact</a>
         </div>
 
         <div class="card-section">
-          <p class="card-label">Highlights</p>
+          <div class="card-section-title">Focus Areas</div>
 
-          <div class="metric">
-            <div class="metric-head">
-              <span>Strategy & Execution</span>
-              <span class="metric-val">A+</span>
-            </div>
-            <div class="bar"><span style="width: 92%"></span></div>
+          <div class="meter">
+            <div class="meter-label">Strategy & Positioning</div>
+            <div class="meter-bar"><span style="width: 92%"></span></div>
           </div>
 
-          <div class="metric">
-            <div class="metric-head">
-              <span>Brand & Messaging</span>
-              <span class="metric-val">A</span>
-            </div>
-            <div class="bar"><span style="width: 86%"></span></div>
+          <div class="meter">
+            <div class="meter-label">Growth & Analytics</div>
+            <div class="meter-bar"><span style="width: 88%"></span></div>
           </div>
 
-          <div class="metric">
-            <div class="metric-head">
-              <span>Data & Insight</span>
-              <span class="metric-val">A</span>
-            </div>
-            <div class="bar"><span style="width: 84%"></span></div>
+          <div class="meter">
+            <div class="meter-label">Brand & Messaging</div>
+            <div class="meter-bar"><span style="width: 84%"></span></div>
           </div>
         </div>
 
-        <div class="card-footer">
-          <a class="btn small" href="assets/Alexander_Elias_CV.pdf" download>Download CV</a>
-          <a class="btn small ghost" href="about.html">About Me</a>
+        <div class="card-bottom">
+          <a class="card-link" href="about.html">Click to learn more about me →</a>
         </div>
       </aside>
-    </div>
+    </section>
   </main>
 </body>
 </html>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <!-- Left -->
+    <div class="footer-left">
+      <p class="footer-name">Alexander Elias</p>
+      <p class="footer-tagline">Business • Strategy • Growth</p>
+    </div>
+
+    <!-- Center -->
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Right -->
+    <div class="footer-right">
+      <p class="footer-copy">© <span id="year"></span> Alexander Elias</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
