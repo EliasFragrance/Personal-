@@ -172,7 +172,8 @@ button:focus-visible{
   line-height: 0.95;
   letter-spacing: -1px;
   font-weight: 800;
-  text-shadow: 0 10px 40px rgba(0,0,0,.45);
+  color: var(--charcoal);   /* ADD THIS */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4); /* optional, softer */
 }
 
 .hero-subtitle{
@@ -180,7 +181,7 @@ button:focus-visible{
   max-width: 52ch;
   font-size: 18px;
   line-height: 1.6;
-  color: rgba(247,245,242,.88);
+  color: var(--charcoal-2);
 }
 
 /* ---------- Buttons ---------- */
