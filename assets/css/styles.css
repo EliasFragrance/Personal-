@@ -23,7 +23,7 @@
   --max: 1120px;
 
   /* Layout */
-  --header-h: 78px;
+  --header-h: 94px;
   --page-pad-y: 28px;
   --page-pad-x: 18px;
 }
@@ -110,17 +110,16 @@ button:focus-visible{
   display: block;
 }
 
-/* Nav */
+/* ===== NAV FULL-WIDTH DISTRIBUTION ===== */
 .nav{
-  flex: 1;
+  flex: 1;                                /* takes remaining space */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;        /* EVEN spacing across */
   align-items: center;
-  gap: 34px;
 
   font-family: "Playfair Display", "Libre Baskerville", serif;
-  font-size: 14px;
-  letter-spacing: 0.22em;
+  font-size: 17px;                       /* bigger */
+  letter-spacing: 0.34em;                /* luxurious spacing */
   text-transform: uppercase;
 }
 
