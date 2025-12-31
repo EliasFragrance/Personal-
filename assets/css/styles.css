@@ -122,7 +122,15 @@ button:focus-visible{
   letter-spacing: 0.34em;                /* luxurious spacing */
   text-transform: uppercase;
 }
+.nav a{
+  padding: 14px 6px;
+  line-height: 1;
+  position: relative;
+}
 
+.nav a.active::after{
+  bottom: -10px;
+}
 .nav a{
   position: relative; /* needed for underline */
   padding: 10px 6px;
