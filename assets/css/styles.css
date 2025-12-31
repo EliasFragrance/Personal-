@@ -397,12 +397,11 @@ button:focus-visible{
   width: 50%;
   border-radius: 999px;
 
-  /* brass + lacquer gradient */
-  background:
-    linear-gradient(90deg,
-      rgba(176,141,87,0.95),
-      rgba(210,178,120,0.92)
-    );
+  background: linear-gradient(90deg,
+  rgba(247,245,242,0.98),
+  rgba(250,249,246,0.98)
+);
+
   box-shadow:
     0 6px 16px rgba(0,0,0,0.35),
     inset 0 1px 0 rgba(255,255,255,0.25);
