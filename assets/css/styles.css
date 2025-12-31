@@ -163,28 +163,24 @@ button:focus-visible{
 /* ---------- Page wrapper ---------- */
 .page{
   width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
+  max-width: none;              /* FULL WIDTH */
+  margin: 0;
   padding: var(--page-pad-y) var(--page-pad-x);
 
-  /* This is the key: page expands to fill remaining viewport height */
   flex: 1;
-  display: flex;
+  display: block;               /* don’t force children layout here */
 }
 
 /* ---------- Hero (index) ---------- */
 .hero{
   width: 100%;
-
-  /* Fill the screen (minus header + page padding) */
-  min-height: calc(100dvh - var(--header-h) - (var(--page-pad-y) * 2));
-
+  min-height: 100vh;        /* simple, full-screen */
+  
   display: grid;
   grid-template-columns: 1.2fr 0.9fr;
   gap: 36px;
   align-items: center;
 
-  /* On image backgrounds, hero copy is typically light */
   color: var(--cream);
 }
 
