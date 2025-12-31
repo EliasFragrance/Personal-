@@ -122,6 +122,11 @@ button:focus-visible{
   letter-spacing: 0.34em;                /* luxurious spacing */
   text-transform: uppercase;
 }
+
+.nav a{
+  font-weight: 600;   /* strong but elegant */
+}
+
 .nav a{
   padding: 14px 6px;
   line-height: 1;
