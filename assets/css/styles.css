@@ -216,11 +216,23 @@ button:focus-visible{
   align-items: center;
   justify-content: center;
 
-  border-radius: 999px;   /* LinkedIn-style pill */
+  border-radius: 999px;
   font-size: 14px;
   line-height: 1;
 }
 
+/* ---------- Card action buttons (override) ---------- */
+.card-actions .btn{
+  background: #000000;
+  color: #ffffff;
+  font-family: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+  border-color: rgba(255,255,255,0.25);
+}
+
+.card-actions .btn:hover{
+  background: #0a0a0a;
+  border-color: rgba(255,255,255,0.45);
+}
 
 /* ---------- Hero card ---------- */
 .hero-card{
