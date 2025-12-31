@@ -394,14 +394,45 @@ button:focus-visible{
   }
 }
 
-/* 6) Phones: keep header usable, prevent nav overflow disasters */
 @media (max-width: 620px){
-  /* let nav scroll horizontally instead of breaking layout */
+
+  /* Header container tightens vertically */
+  .header-inner{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+
+  /* Stack brand + nav */
+  .header-inner{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Nav fits fully inside header */
   .nav{
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    column-gap: 12px;
+    row-gap: 6px;
+
+    font-size: 14px;
+    letter-spacing: 0.12em;
+  }
+
+  .nav a{
+    padding: 6px 6px;
+    white-space: nowrap;
+  }
+
+  /* Slightly smaller logo for balance */
+  .brand img{
+    height: 32px;
+  }
+}
+
     scrollbar-width: none; /* Firefox */
   }
   .nav::-webkit-scrollbar{ display:none; }
