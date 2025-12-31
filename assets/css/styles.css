@@ -97,29 +97,29 @@ button:focus-visible{
   gap: 40px;
 }
 
-/* ===== LOGO LEFT & LARGE ===== */
+/* ===== LOGO LEFT + LEVEL ===== */
 .brand{
   display: flex;
-  align-items: center;
-  margin-right: 40px; /* space between logo and nav */
+  align-items: center;        /* aligns image with text */
+  flex-shrink: 0;             /* prevents squishing */
 }
 
 .brand img{
-  height: 46px;       /* LARGE but tasteful */
+  height: 44px;               /* large + premium */
   width: auto;
   display: block;
 }
 
 /* ===== NAV FULL-WIDTH DISTRIBUTION ===== */
 .nav{
-  flex: 1;                                /* takes remaining space */
+  flex: 1;                                /* takes remaining width */
   display: flex;
-  justify-content: space-between;        /* EVEN spacing across */
+  justify-content: space-between;        /* spreads items evenly */
   align-items: center;
 
   font-family: "Playfair Display", "Libre Baskerville", serif;
-  font-size: 17px;                       /* bigger */
-  letter-spacing: 0.34em;                /* luxurious spacing */
+  font-size: 17px;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
 }
 
@@ -137,9 +137,14 @@ button:focus-visible{
   bottom: -10px;
 }
 .nav a{
-  position: relative; /* needed for underline */
-  padding: 10px 6px;
-  font-weight: 500;
+  position: relative;
+  padding: 14px 6px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.nav a.active::after{
+  bottom: -10px;
 }
 
 .nav a:hover{ color: var(--accent); }
